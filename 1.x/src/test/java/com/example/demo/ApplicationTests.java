@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,6 +25,13 @@ public class ApplicationTests {
 		HelloProperties properties = this.context.getBean(HelloProperties.class);
 		List<String> foo = properties.getFoo();
 		assertThat(foo).containsExactly("c");
+	}
+
+	@Test
+	public void yamlListMappedToSet() {
+		HelloProperties properties = this.context.getBean(HelloProperties.class);
+		Set<String> bar = properties.getBar();
+		assertThat(bar).containsExactly("cat", "dog", "bird");
 	}
 
 }

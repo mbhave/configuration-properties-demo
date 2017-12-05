@@ -1,2 +1,4 @@
 hello.foo-list: c
 hello.bar: cat, dog, bird
+
+management.endpoints.web.exposure.include: '*'

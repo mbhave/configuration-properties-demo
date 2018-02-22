@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
@@ -32,6 +33,13 @@ public class ApplicationTests {
 		HelloProperties properties = this.context.getBean(HelloProperties.class);
 		Set<String> bar = properties.getBar();
 		assertThat(bar).containsExactly("cat", "dog", "bird");
+	}
+
+	@Test
+	public void durationIsSetWithDefaultUnitAsMilliseconds() {
+		HelloProperties properties = this.context.getBean(HelloProperties.class);
+		Duration time = properties.getTime();
+		assertThat(time).isEqualByComparingTo(Duration.ofMillis(6000));
 	}
 
 }

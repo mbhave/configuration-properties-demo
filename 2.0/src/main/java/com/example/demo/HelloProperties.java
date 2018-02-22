@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -15,6 +16,8 @@ public class HelloProperties {
 	private List<String> fooList = Arrays.asList("a", "b");
 
 	private Set<String> bar;
+	
+	private Duration time = Duration.ofSeconds(1800);
 
 	public List<String> getFooList() {
 		return fooList;
@@ -30,5 +33,13 @@ public class HelloProperties {
 
 	public void setBar(Set<String> bar) {
 		this.bar = bar;
+	}
+
+	public Duration getTime() {
+		return time;
+	}
+
+	public void setTime(Duration time) {
+		this.time = time;
 	}
 }

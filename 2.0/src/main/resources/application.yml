@@ -3,3 +3,5 @@ hello.bar: cat, dog, bird
 
 hello.time: 6000
 management.endpoints.web.exposure.include: '*'
+
+health.showDetails: true
